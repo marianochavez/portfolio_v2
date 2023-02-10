@@ -1,7 +1,7 @@
 import {useContext} from "react";
 import {Box, Center, Heading, SimpleGrid} from "@chakra-ui/react";
 
-import {DataContext} from "../../../context";
+import {DataContext} from "../../../context/DataContext";
 
 import ProjectItem from "./ProjectItem";
 

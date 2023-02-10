@@ -14,7 +14,7 @@ import {
 import {motion, useTransform} from "framer-motion";
 import {useContext} from "react";
 
-import {DataContext} from "../../context";
+import {DataContext} from "../../context/DataContext";
 import {useScrollClock} from "../../hooks/useScrollClock";
 
 const BoxMotion = motion(Box);

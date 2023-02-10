@@ -27,7 +27,7 @@ import {FaMoon} from "react-icons/fa";
 import {RiMenu3Line} from "react-icons/ri";
 import {BsGithub, BsLinkedin, BsTwitter} from "react-icons/bs";
 
-import {DataContext} from "../../context";
+import {DataContext} from "../../context/DataContext";
 
 const BoxMotion = motion(Box);
 const TextMotion = motion(Text);

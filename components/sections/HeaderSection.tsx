@@ -2,7 +2,7 @@ import {Box, Flex, Heading, HStack, Image, Stack} from "@chakra-ui/react";
 import {motion, useTransform} from "framer-motion";
 import {useContext} from "react";
 
-import {DataContext} from "../../context";
+import {DataContext} from "../../context/DataContext";
 import {useScrollClock} from "../../hooks/useScrollClock";
 import TextReveal from "../ui/TextReveal";
 
@@ -60,7 +60,7 @@ const GradientImg = () => {
       <MotionBox
         h="100%"
         style={{
-          rotate: rotate,
+          rotate,
           scale: 1.45,
         }}
         w="100%"

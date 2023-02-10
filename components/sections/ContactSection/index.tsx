@@ -2,7 +2,7 @@ import {useContext} from "react";
 import {Box, Flex, Divider, Heading, Center} from "@chakra-ui/react";
 import {motion} from "framer-motion";
 
-import {DataContext} from "../../../context";
+import {DataContext} from "../../../context/DataContext";
 
 import ContactForm from "./ContactForm";
 import SocialBox from "./SocialBox";

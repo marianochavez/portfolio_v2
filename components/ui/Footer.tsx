@@ -2,7 +2,7 @@ import {Box, Button, Flex, Heading, Text} from "@chakra-ui/react";
 import {useContext} from "react";
 import {Link as LinkScroll} from "react-scroll";
 
-import {DataContext} from "../../context";
+import {DataContext} from "../../context/DataContext";
 
 const Footer = () => {
   const {language, portfolio} = useContext(DataContext);
