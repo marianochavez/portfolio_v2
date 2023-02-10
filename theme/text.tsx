@@ -1,10 +1,21 @@
-const FONT_SCALE_BASE = 1;
-const FONT_SCALE_MULTIPLIER = 1.5;
+import { Major_Mono_Display, Space_Mono } from "@next/font/google";
+
+const majorMono = Major_Mono_Display({
+  subsets: ["latin"],
+  weight: "400",
+  display: "block",
+  style: "normal",
+});
+
+export const spaceMono = Space_Mono({ weight: "400", subsets: ["latin"] });
 
 export const fonts = {
-  heading: `'Major Mono Display', sans-serif`,
-  body: `'Space Mono', sans-serif`,
+  heading: majorMono.style.fontFamily,
+  body: spaceMono.style.fontFamily,
 };
+
+const FONT_SCALE_BASE = 1;
+const FONT_SCALE_MULTIPLIER = 1.5;
 
 export const textStyles = {
   xs: {

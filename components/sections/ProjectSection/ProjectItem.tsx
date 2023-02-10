@@ -72,6 +72,7 @@ const ProjectItem = ({ project, language }: ProjectItemProps) => {
             variants={imageVariants}
             onTap={() => isMobile && setIsHovered((isHover) => !isHover)}
           /> */}
+          {/* TODO: en mobile el tap no funciona, se tapea la imagen */}
           <motion.div
             style={{width:"100%",minHeight:"190px", position:"relative"}}
             initial={{ scale: 1.05 }}
