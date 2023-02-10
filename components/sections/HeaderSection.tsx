@@ -1,6 +1,7 @@
-import {Box, Flex, Heading, HStack, Image, Stack} from "@chakra-ui/react";
-import {motion, useTransform} from "framer-motion";
 import {useContext} from "react";
+import Image from 'next/image'
+import {Box, Flex, Heading, HStack, Stack} from "@chakra-ui/react";
+import {motion, useTransform} from "framer-motion";
 
 import {DataContext} from "../../context/DataContext";
 import {useScrollClock} from "../../hooks/useScrollClock";
@@ -67,9 +68,10 @@ const GradientImg = () => {
       >
         <Image
           alt="Mariano Chavez"
-          h="auto"
           src="https://res.cloudinary.com/chavedo/image/upload/c_fill,h_540,w_540/v1661138977/portfolio/20353670.webp"
-          w="512px"
+          height={512}
+          width={512}
+          priority
         />
       </MotionBox>
     </Box>

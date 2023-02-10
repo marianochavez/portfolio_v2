@@ -1,3 +1,5 @@
+import {useContext} from "react";
+import Image from "next/image";
 import {
   Box,
   Button,
@@ -6,13 +8,11 @@ import {
   Flex,
   Heading,
   Highlight,
-  Image,
   Link,
   Show,
   Text,
 } from "@chakra-ui/react";
 import {motion, useTransform} from "framer-motion";
-import {useContext} from "react";
 
 import {DataContext} from "../../context/DataContext";
 import {useScrollClock} from "../../hooks/useScrollClock";
@@ -73,18 +73,12 @@ const AboutSection = () => {
             pl={2}
           >
             <Image
-              layout
               alt="Profile image"
-              animate={{opacity: 1}}
-              as={motion.img}
-              borderRadius="full"
-              boxSize="10rem"
-              initial={{opacity: 0}}
-              loading="lazy"
-              objectFit="cover"
-              order={[3, 1]}
               src={portfolio.about.img}
-              transitionDuration="0.3s"
+              width={200}
+              height={200}
+              style={{borderRadius:"50%", objectFit:"cover",width:"10rem",height:"10rem"}}
+              loading="lazy"
             />
             <Show above="md">
               <Heading order={2} size="lg" textAlign="center">

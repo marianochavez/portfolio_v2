@@ -1,4 +1,4 @@
-import {useContext, useEffect, useState} from "react";
+import { useContext, useEffect, useState } from "react";
 import {
   Box,
   Button,
@@ -20,31 +20,36 @@ import {
   useDisclosure,
   VStack,
 } from "@chakra-ui/react";
-import {AnimatePresence, motion, useScroll, useTransform} from "framer-motion";
-import {Link as LinkScroll} from "react-scroll";
-import {ImSun} from "react-icons/im";
-import {FaMoon} from "react-icons/fa";
-import {RiMenu3Line} from "react-icons/ri";
-import {BsGithub, BsLinkedin, BsTwitter} from "react-icons/bs";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { Link as LinkScroll } from "react-scroll";
+import { ImSun } from "react-icons/im";
+import { FaMoon } from "react-icons/fa";
+import { RiMenu3Line } from "react-icons/ri";
+import { BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs";
 
-import {DataContext} from "../../context/DataContext";
+import { DataContext } from "../../context/DataContext";
 
 const BoxMotion = motion(Box);
 const TextMotion = motion(Text);
 
 const SectionToggleVariants = {
-  initial: {opacity: 0, x: -100},
-  animate: {opacity: 1, x: 0},
-  exit: {opacity: 0},
-  hover: {scale: 1.2, transition: {duration: 0.1}},
-  tap: {scale: 0.9, transition: {duration: 0.1}},
+  initial: { opacity: 0, x: -100 },
+  animate: { opacity: 1, x: 0 },
+  exit: { opacity: 0 },
+  hover: { scale: 1.2, transition: { duration: 0.1 } },
+  tap: { scale: 0.9, transition: { duration: 0.1 } },
 };
 
 const Navbar = () => {
-  const {portfolio} = useContext(DataContext);
-  const {isOpen, onOpen, onClose} = useDisclosure();
+  const { portfolio } = useContext(DataContext);
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const [display, setDisplay] = useState<"none" | "block">("none");
-  const {scrollY} = useScroll();
+  const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 100], [0, 1]);
 
   useEffect(() => {
@@ -58,7 +63,7 @@ const Navbar = () => {
       display={display}
       h="70px"
       position="fixed"
-      style={{opacity}}
+      style={{ opacity }}
       top={0}
       w="100%"
       zIndex={99}
@@ -77,7 +82,7 @@ const Navbar = () => {
           <IconButton
             aria-label="Menu button"
             h="40px"
-            icon={<RiMenu3Line style={{fontSize: "20px"}} />}
+            icon={<RiMenu3Line style={{ fontSize: "20px" }} />}
             id="Drawer icon"
             rounded="full"
             w="40px"
@@ -85,28 +90,30 @@ const Navbar = () => {
           />
         </HStack>
       </Flex>
-      <DrawerMenu isOpen={isOpen} sections={portfolio.sections} onClose={onClose} />
+      <DrawerMenu
+        isOpen={isOpen}
+        sections={portfolio.sections}
+        onClose={onClose}
+      />
     </BoxMotion>
   );
 };
 
 type DrawerMenuProps = {
   isOpen: boolean;
-  sections: {title: string; to: string}[];
+  sections: { title: string; to: string }[];
   onClose: () => void;
 };
 
-const DrawerMenu = ({isOpen, sections, onClose}: DrawerMenuProps) => (
+const DrawerMenu = ({ isOpen, sections, onClose }: DrawerMenuProps) => (
   <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
     <DrawerOverlay />
     <DrawerContent>
       <DrawerCloseButton fontSize="2xl" mt={6} />
       <DrawerHeader>
-        <Button variant="unstyled">
-          <Heading smooth as={LinkScroll} to="intro" onClick={onClose}>
-            MC
-          </Heading>
-        </Button>
+        <LinkScroll smooth to="intro" onClick={onClose}>
+          MC
+        </LinkScroll>
       </DrawerHeader>
 
       <DrawerBody>
@@ -165,7 +172,7 @@ type DrawerSocialButton = {
   ariaLabel: string;
 };
 
-const DrawerSocialButton = ({href, ariaLabel, icon}: DrawerSocialButton) => (
+const DrawerSocialButton = ({ href, ariaLabel, icon }: DrawerSocialButton) => (
   <IconButton
     isExternal
     aria-label={ariaLabel}
@@ -179,13 +186,13 @@ const DrawerSocialButton = ({href, ariaLabel, icon}: DrawerSocialButton) => (
 );
 
 const IconToggleVariants = {
-  initial: {opacity: 0, y: -10},
-  animate: {opacity: 1, y: 0},
-  exit: {opacity: 0, y: -5},
+  initial: { opacity: 0, y: -10 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -5 },
 };
 
 const ColorToggleButton = () => {
-  const {colorMode, toggleColorMode} = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <IconButton
@@ -198,7 +205,7 @@ const ColorToggleButton = () => {
             animate="animate"
             exit="exit"
             initial="initial"
-            transition={{duration: 0.3}}
+            transition={{ duration: 0.3 }}
             variants={IconToggleVariants}
           >
             {colorMode === "light" ? <ImSun /> : <FaMoon />}
@@ -214,17 +221,22 @@ const ColorToggleButton = () => {
 };
 
 const LangToggleButton = () => {
-  const {language, toggleLanguage} = useContext(DataContext);
+  const { language, toggleLanguage } = useContext(DataContext);
 
   return (
-    <Button h="40px" rounded="full" variant="solid" onClick={() => toggleLanguage()}>
+    <Button
+      h="40px"
+      rounded="full"
+      variant="solid"
+      onClick={() => toggleLanguage()}
+    >
       <AnimatePresence initial={false} mode="wait">
         <TextMotion
           key={language}
           animate="animate"
           exit="exit"
           initial="initial"
-          transition={{duration: 0.3}}
+          transition={{ duration: 0.3 }}
           variants={IconToggleVariants}
         >
           {language === "es" ? "Español" : "English"}
@@ -235,7 +247,12 @@ const LangToggleButton = () => {
 };
 
 const TextLogo = () => (
-  <Heading display={{base: "none", lg: "flex"}} flex={1} fontSize="4xl" style={{cursor: "pointer"}}>
+  <Heading
+    display={{ base: "none", lg: "flex" }}
+    flex={1}
+    fontSize="4xl"
+    style={{ cursor: "pointer" }}
+  >
     <LinkScroll smooth to="intro">
       MC
     </LinkScroll>

@@ -1,17 +1,25 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import { Box } from "@chakra-ui/react";
 import { Element as ScrollSection } from "react-scroll";
 
+import HeaderSection from "@/components/sections/HeaderSection";
 import Navbar from "@/components/ui/Navbar";
 import ChevronNav from "@/components/ui/ChevronNav";
-import ProjectSection from "@/components/sections/ProjectSection";
-import ContactSection from "@/components/sections/ContactSection";
 import Footer from "@/components/ui/Footer";
 
-// TODO: implementar un Loading en el dynamic de Header
-const HeaderSection = dynamic(()=> import("@/components/sections/HeaderSection"),{ssr: false});
-const AboutSection = dynamic(()=> import("@/components/sections/AboutSection"),{ssr: false});
+
+const AboutSection = dynamic(
+  () => import("@/components/sections/AboutSection"),
+  { ssr: false }
+);
+const ProjectSection = dynamic(
+  () => import("@/components/sections/ProjectSection"),
+  { ssr: false }
+);
+const ContactSection = dynamic(
+  () => import("@/components/sections/ContactSection"),
+  { ssr: false }
+);
 
 export default function Home() {
   return (
@@ -23,9 +31,7 @@ export default function Home() {
       <Navbar />
 
       <ScrollSection name="intro">
-        <Box minH='100vh'>
           <HeaderSection />
-        </Box>
       </ScrollSection>
 
       <ScrollSection name="about">

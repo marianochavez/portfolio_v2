@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 import {
   Box,
   Button,
@@ -11,7 +11,8 @@ import {
   Text,
   useBreakpointValue,
 } from "@chakra-ui/react";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
+import Image from "next/image";
 
 type ProjectItemProps = {
   project: {
@@ -26,24 +27,24 @@ type ProjectItemProps = {
 };
 
 const boxVariants = {
-  initial: {x: 0, y: 0},
-  hovered: {x: 6, y: 6},
+  initial: { x: 0, y: 0 },
+  hovered: { x: 6, y: 6 },
 };
 
 const imageVariants = {
-  hovered: {scale: 1, opacity: 0.5},
+  hovered: { scale: 1, opacity: 0.5 },
 };
 
 const buttonVariants = {
-  hovered: {opacity: 1},
+  hovered: { opacity: 1 },
 };
 
-const ProjectItem = ({project, language}: ProjectItemProps) => {
+const ProjectItem = ({ project, language }: ProjectItemProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const isMobile = useBreakpointValue({base: true, sm: false});
+  const isMobile = useBreakpointValue({ base: true, sm: false });
 
   return (
-    <GridItem backgroundColor="purple.600" borderRadius="lg">
+    <GridItem backgroundColor="purple.600" borderRadius="lg" >
       <Box
         animate={isMobile && isHovered ? "hovered" : "initial"}
         as={motion.div}
@@ -59,25 +60,40 @@ const ProjectItem = ({project, language}: ProjectItemProps) => {
         onHoverStart={() => setIsHovered(true)}
       >
         <Flex alignItems="center" justifyContent="center" overflow="hidden">
-          <Img
+          {/* TODO: borrar */}
+          {/* <Img
             alt={project.name}
             as={motion.img}
             h="190px"
-            initial={{scale: 1.05}}
+            initial={{ scale: 1.05 }}
             loading="lazy"
             objectFit="cover"
             src={project.img}
             variants={imageVariants}
-            w="100%"
             onTap={() => isMobile && setIsHovered((isHover) => !isHover)}
-          />
+          /> */}
+          <motion.div
+            style={{width:"100%",minHeight:"190px", position:"relative"}}
+            initial={{ scale: 1.05 }}
+            variants={imageVariants}
+            onTap={() => isMobile && setIsHovered((isHover) => !isHover)}
+          >
+            <Image
+              src={project.img}
+              alt={project.name}
+              style={{ objectFit: "cover"}}
+              loading="lazy"
+              fill
+              sizes="100% 190px"
+            />
+          </motion.div>
           <HStack position="absolute" zIndex={100}>
             <Link isExternal href={project.github} variant="unstyled">
               <Button
                 as={motion.button}
                 colorScheme="purple"
                 display={isHovered ? "block" : "none"}
-                initial={{opacity: 0}}
+                initial={{ opacity: 0 }}
                 size="sm"
                 variants={buttonVariants}
               >
@@ -90,7 +106,7 @@ const ProjectItem = ({project, language}: ProjectItemProps) => {
                   as={motion.button}
                   colorScheme="purple"
                   display={isHovered ? "block" : "none"}
-                  initial={{opacity: 0}}
+                  initial={{ opacity: 0 }}
                   size="sm"
                   variants={buttonVariants}
                 >
@@ -117,7 +133,14 @@ const ProjectItem = ({project, language}: ProjectItemProps) => {
           </Box>
           <Box pt={2}>
             {project.tools.map((tool) => (
-              <Tag key={tool} fontSize="sm" fontWeight="bold" mr={1} mt={1} variant="subtle">
+              <Tag
+                key={tool}
+                fontSize="sm"
+                fontWeight="bold"
+                mr={1}
+                mt={1}
+                variant="subtle"
+              >
                 {tool}
               </Tag>
             ))}
