@@ -56,28 +56,15 @@ const ProjectItem = ({ project, language }: ProjectItemProps) => {
         overflow="hidden"
         variants={boxVariants}
         whileHover="hovered"
-        onHoverEnd={() => setIsHovered(false)}
-        onHoverStart={() => setIsHovered(true)}
+        onHoverEnd={() => !isMobile && setIsHovered(false)}
+        onHoverStart={() => !isMobile && setIsHovered(true)}
+        onClick={() => {isMobile && setIsHovered(!isHovered)}}
       >
         <Flex alignItems="center" justifyContent="center" overflow="hidden">
-          {/* TODO: borrar */}
-          {/* <Img
-            alt={project.name}
-            as={motion.img}
-            h="190px"
-            initial={{ scale: 1.05 }}
-            loading="lazy"
-            objectFit="cover"
-            src={project.img}
-            variants={imageVariants}
-            onTap={() => isMobile && setIsHovered((isHover) => !isHover)}
-          /> */}
-          {/* TODO: en mobile el tap no funciona, se tapea la imagen */}
           <motion.div
             style={{width:"100%",minHeight:"190px", position:"relative"}}
             initial={{ scale: 1.05 }}
             variants={imageVariants}
-            onTap={() => isMobile && setIsHovered((isHover) => !isHover)}
           >
             <Image
               src={project.img}
@@ -124,7 +111,6 @@ const ProjectItem = ({ project, language }: ProjectItemProps) => {
           flexDir="column"
           h="calc(100% - 190px)"
           p={3}
-          onTap={() => isMobile && setIsHovered((isHover) => !isHover)}
         >
           <Text fontSize="2xl" fontWeight="bold">
             {project.name}
