@@ -14,7 +14,7 @@ export const portfolioEN: PortfolioType = {
     bio: `
 I am an advanced student of Information Systems Engineering and a programming lover.
 
-I am currently focused on the implementation of microservices using Next.js as my main tool. I know both in Backend developing applications in Node.js, Django, and Ruby on Rails; and in Frontend developing web applications, generally, with JavaScript/React/Next.
+I am currently focused on the implementation of microservices using Next.js as my main tool. I know both in Backend developing applications in Node.js, Django, and Ruby on Rails; and in Frontend developing web applications, generally, with JavaScript/React/Next.js.
 
 I have always liked to learn new technologies, I consider it necessary and of great value to know different areas, even if they are not related to our specialization.
 `,
