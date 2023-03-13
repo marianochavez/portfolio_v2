@@ -12,11 +12,11 @@ export const portfolioEN: PortfolioType = {
     img: "https://res.cloudinary.com/chavedo/image/upload/v1660949890/portfolio/profile.webp",
     hobbies: ["Drumming 🥁", "Read 📙", "Exercise 🏋", "Beer 🍺"],
     bio: `
-I'm an advanced student of Information Systems Engineering and a programming lover.
+I am an advanced student of Information Systems Engineering and a programming lover.
 
-I have knowledge both in Backend developing applications in Django, Rails and Node.js; as in Frontend developing web applications usually with JavaScript/React/Next, I'm currently focused on React Native.
+I am currently focused on the implementation of microservices using Next.js as my main tool. I know both in Backend developing applications in Node.js, Django, and Ruby on Rails; and in Frontend developing web applications, generally, with JavaScript/React/Next.
 
-Likewise, I have always liked to learn new technologies, I consider it necessary and of great value to have knowledge in different areas, even if they are outside our specialization.
+I have always liked to learn new technologies, I consider it necessary and of great value to know different areas, even if they are not related to our specialization.
 `,
     skills: ["Python", "Django", "JavaScript", "TypeScript", "Node.js", "React", "Next.js"],
   },
@@ -37,10 +37,18 @@ Likewise, I have always liked to learn new technologies, I consider it necessary
       description: `Application to track packages and search for users.`,
     },
     {
+      name: "Amazon Scraper",
+      img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1678727891/portfolio/amazon-scraper.png",
+      tools: ["NextJS", "TypeScript","BrightData",  "Firebase", "WebHook", "Tailwind"],
+      github: "https://github.com/marianochavez/amazon_scraper",
+      url: "https://amazon-scraper-frontend.vercel.app/",
+      description: "Application to scrape Amazon products, implementing functions in the cloud to perform asynchronous tasks.",
+    },
+    {
       name: "Jaguarete Kaa",
       img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1661525134/portfolio/jaguarete-kaa.webp",
       tools: ["Django", "SQL", "CrispyForms", "Bootstrap"],
-      url: "https://jaguaretekaaecommerce.herokuapp.com/",
+      url: "https://www.youtube.com/watch?v=KVkEf167GME",
       github: "https://github.com/marianochavez/jaguarete_ecommerce_django",
       description: `Ecommerce for the sale of technological products. It has user management, products, categories, account recovery and administrative page.`,
     },
@@ -51,6 +59,14 @@ Likewise, I have always liked to learn new technologies, I consider it necessary
       url: "https://ebay-thirdweb-five.vercel.app/",
       github: "https://github.com/marianochavez/ebay_thirdweb",
       description: `Page for sale of NFTs from my collection with auction included.`,
+    },
+    {
+      name: "Repositorio FRM",
+      img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1678729128/portfolio/repository-frm.png",
+      tools: ["NextJS", "TypeScript", "ChakraUI", "React-Query", "MongoDB", "NextAuth"],
+      url: "https://repository-frm.vercel.app/",
+      github: "https://github.com/marianochavez/repository_frm",
+      description: "Application for the management of faculty subject repositories. Only students belonging to the faculty will be able to access their repositories.",
     },
     {
       name: "Calendar",
@@ -82,6 +98,14 @@ Likewise, I have always liked to learn new technologies, I consider it necessary
       tools: ["Node.js", "Express", "Docker", "EJS", "Axios"],
       github: "https://github.com/marianochavez/openjira_nextjs",
       description: `Dockerized page to obtain news, weather, dollar exchange and covid statistics.`,
+    },
+    {
+      name: "Porfolio",
+      img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1678729309/portfolio/portfolio.png",
+      tools: ["NextJS", "TypeScript", "ChakraUI", "React-Scroll", "Framer-Motion"],
+      github: "https://github.com/marianochavez/portfolio_motion_next",
+      url: "https://marianochavez.vercel.app/",
+      description: "Page for personal projects and contact.",
     },
     {
       name: "+50 Projects",

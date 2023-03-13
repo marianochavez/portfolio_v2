@@ -32,7 +32,7 @@ export const portfolioES: PortfolioType = {
     bio: `
 Soy estudiante avanzado de Ingeniería en Sistemas de Información y amante de la programación.
 
-Tengo conocimientos tanto en Backend desarrollando aplicaciones en Django, Rails y Node.js; como en Frontend desarrollando aplicaciones web, generalmente con JavaScript/React/Next, actualmente me encuentro enfocado en React Native.
+Actualmente me encuentro enfocado en la aplicación de microservicios utilizando Next.js como herramienta principal. Tengo conocimientos tanto en Backend desarrollando aplicaciones en Node.js, Django y Ruby on Rails; como en Frontend desarrollando aplicaciones web, generalmente con JavaScript/React/Next.
 
 Siempre me ha gustado aprender tecnologías nuevas, considero necesario y de gran valor tener conocimientos en distintas áreas por más que sean ajenas a nuestra especialización.
 `,
@@ -49,26 +49,42 @@ Siempre me ha gustado aprender tecnologías nuevas, considero necesario y de gra
     },
     {
       name: "UPS Clone",
-      img: "https://res.cloudinary.com/chavedo/image/upload/v1666536699/portfolio/react_native.png",
+      img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1666536699/portfolio/react_native.png",
       tools: ["React Native", "TypeScript", "Stepzen", "Tailwind", "RNElements", "Expo"],
       github: "https://github.com/marianochavez/ups_react_native",
       description: `Aplicación para seguimiento de paquetes y busqueda de usuarios.`,
     },
     {
+      name: "Amazon Scraper",
+      img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1678727891/portfolio/amazon-scraper.png",
+      tools: ["NextJS", "TypeScript","BrightData",  "Firebase", "WebHook", "Tailwind"],
+      github: "https://github.com/marianochavez/amazon_scraper",
+      url: "https://amazon-scraper-frontend.vercel.app/",
+      description: "Aplicación para scrapear productos de Amazon, implementando cloud functions para realizar tareas asíncronas.",
+    },
+    {
       name: "Jaguarete Kaa",
       img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1661525134/portfolio/jaguarete-kaa.webp",
       tools: ["Django", "SQL", "CrispyForms", "Bootstrap"],
-      url: "https://jaguaretekaaecommerce.herokuapp.com/",
+      url: "https://www.youtube.com/watch?v=KVkEf167GME",
       github: "https://github.com/marianochavez/jaguarete_ecommerce_django",
       description: `Ecommerce para venta de productos tecnológicos. Tiene gestión de usuarios, productos, categorías, recuperación de cuenta y página administrativa.`,
     },
     {
       name: "Ebay Thirdweb",
-      img: "https://res.cloudinary.com/chavedo/image/upload/v1668881622/portfolio/ebay-thirdweb.webp",
+      img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1668881622/portfolio/ebay-thirdweb.webp",
       tools: ["NextJS", "TypeScript", "Thirdweb", "Tailwind", "Ethers"],
       url: "https://ebay-thirdweb-five.vercel.app/",
       github: "https://github.com/marianochavez/ebay_thirdweb",
       description: `Página para venta de NFTs de mi colección con subasta incluida.`,
+    },
+    {
+      name: "Repositorio FRM",
+      img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1678729128/portfolio/repository-frm.png",
+      tools: ["NextJS", "TypeScript", "ChakraUI", "React-Query", "MongoDB", "NextAuth"],
+      url: "https://repository-frm.vercel.app/",
+      github: "https://github.com/marianochavez/repository_frm",
+      description: "Aplicación para gestión de repositorios de materias de la facultad. Solo los alumnos pertenecientes a la facultad podrán acceder a sus repositorios.",
     },
     {
       name: "Calendario",
@@ -96,14 +112,22 @@ Siempre me ha gustado aprender tecnologías nuevas, considero necesario y de gra
     },
     {
       name: "Arg News",
-      img: "https://res.cloudinary.com/chavedo/image/upload/v1666538359/portfolio/node_news.png",
+      img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1666538359/portfolio/node_news.png",
       tools: ["Node.js", "Express", "Docker", "EJS", "Axios"],
       github: "https://github.com/marianochavez/openjira_nextjs",
       description: `Página dockerizada para la obtención de noticias, clima, cambio dolar y estadisticas covid.`,
     },
     {
+      name: "Porfolio",
+      img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1678729309/portfolio/portfolio.png",
+      tools: ["NextJS", "TypeScript", "ChakraUI", "React-Scroll", "Framer-Motion"],
+      github: "https://github.com/marianochavez/portfolio_motion_next",
+      url: "https://marianochavez.vercel.app/",
+      description: "Página para proyectos personales y contacto.",
+    },
+    {
       name: "+50 Proyectos",
-      img: "https://res.cloudinary.com/chavedo/image/upload/v1666538824/portfolio/github.webp",
+      img: "https://res.cloudinary.com/chavedo/image/upload/c_scale,w_512/v1666538824/portfolio/github.webp",
       tools: ["GitHub"],
       github: "https://github.com/marianochavez",
       description: `Estos son solo algunos de mis proyectos, puedes ver más en mi repositorio de GitHub.`,
