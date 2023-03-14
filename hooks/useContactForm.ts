@@ -34,10 +34,10 @@ export const useContactForm = ({language}: UseContactFormProps) => {
 
     try {
       await send(
-        process.env.VITE_EMAILJS_SERVICE_ID as string,
-        process.env.VITE_EMAILJS_TEMPLATE as string,
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE as string,
         form,
-        process.env.VITE_EMAILJS_PUBLIC_KEY as string,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string,
       );
     } catch (error) {
       setIsLoading(false);
