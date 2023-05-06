@@ -1,4 +1,4 @@
-import { Major_Mono_Display, Space_Mono } from "@next/font/google";
+import { Major_Mono_Display, Space_Mono } from "next/font/google";
 
 const majorMono = Major_Mono_Display({
   subsets: ["latin"],

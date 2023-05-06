@@ -2,7 +2,6 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 
 import HeaderSection from "@/components/sections/HeaderSection";
-import Footer from "@/components/ui/Footer";
 
 const Navbar = dynamic(() => import("@/components/ui/Navbar"), { ssr: false });
 const AboutSection = dynamic(
@@ -17,7 +16,8 @@ const ContactSection = dynamic(
   () => import("@/components/sections/ContactSection"),
   { ssr: false }
 );
-
+const Footer = dynamic(() => import("@/components/ui/Footer"), { ssr: false });
+// import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   return (

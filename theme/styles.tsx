@@ -1,5 +1,5 @@
 export const styles = {
-  global: () => ({
+  global: (props: any) => ({
     html: {
       fontSize: {
         base: "70%",
@@ -14,6 +14,19 @@ export const styles = {
     "::selection": {
       background: "white",
       color: "black",
+    },
+    "::-webkit-scrollbar": {
+      width: "5px",
+    },
+    "::-webkit-scrollbar-track": {
+      bg: "bg-body",
+    },
+    "::-webkit-scrollbar-thumb": {
+      bg: props.colorMode === "dark" ? "white" : "gray.500",
+      borderRadius: "full",
+    },
+    "::-webkit-scrollbar-thumb:hover": {
+      bg: props.colorMode === "dark" ? "gray.500" : "gray.600",
     },
   }),
 };

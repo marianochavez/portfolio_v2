@@ -38,9 +38,6 @@ const BoxMotion = motion(Box);
 const TextMotion = motion(Text);
 
 const SectionToggleVariants = {
-  initial: { opacity: 0, x: -100 },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 0 },
   hover: { scale: 1.2, transition: { duration: 0.1 } },
   tap: { scale: 0.9, transition: { duration: 0.1 } },
 };
@@ -130,16 +127,11 @@ const DrawerMenu = ({ isOpen, sections, onClose }: DrawerMenuProps) => (
               whileInView="animate"
               whileTap="tap"
             >
-              <Heading
-                smooth
-                as={LinkScroll}
-                fontSize="2xl"
-                offset={-70}
-                to={section.to}
-                onClick={onClose}
-              >
-                {section.title}
-              </Heading>
+              <LinkScroll smooth offset={-70} to={section.to}>
+                <Heading fontSize="2xl" onClick={onClose}>
+                  {section.title}
+                </Heading>
+              </LinkScroll>
             </Button>
           ))}
         </VStack>
