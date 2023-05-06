@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="es">
       <Head >
         <link rel="icon" type="image/ico" href="/favicon.ico" />
-        <meta name="description" content="Desarrollador Fullstack y estudiante de Ingeniería en Sistemas"/>
+        <meta name="description" content="Desarrollador full stack y estudiante de Ingeniería en Sistemas"/>
         <meta property="og:title" content="Mariano Chavez"/>
         <meta property="og:url" content="https://marianochavez.vercel.app/"/>
         <meta property="og:description" content="Estudiante de Ingeniería en Sistemas y desarollador de aplicaciones web"/>

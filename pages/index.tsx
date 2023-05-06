@@ -1,13 +1,10 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import { Element as ScrollSection } from "react-scroll";
 
 import HeaderSection from "@/components/sections/HeaderSection";
-import Navbar from "@/components/ui/Navbar";
-import ChevronNav from "@/components/ui/ChevronNav";
 import Footer from "@/components/ui/Footer";
 
-
+const Navbar = dynamic(() => import("@/components/ui/Navbar"), { ssr: false });
 const AboutSection = dynamic(
   () => import("@/components/sections/AboutSection"),
   { ssr: false }
@@ -21,6 +18,7 @@ const ContactSection = dynamic(
   { ssr: false }
 );
 
+
 export default function Home() {
   return (
     <>
@@ -30,23 +28,13 @@ export default function Home() {
 
       <Navbar />
 
-      <ScrollSection name="intro">
-          <HeaderSection />
-      </ScrollSection>
+      <HeaderSection />
 
-      <ScrollSection name="about">
-        <AboutSection />
-        <ChevronNav toElement="projects" />
-      </ScrollSection>
+      <AboutSection />
 
-      <ScrollSection name="projects">
-        <ProjectSection />
-        <ChevronNav toElement="contact" />
-      </ScrollSection>
+      <ProjectSection />
 
-      <ScrollSection name="contact">
-        <ContactSection />
-      </ScrollSection>
+      <ContactSection />
 
       <Footer />
     </>
