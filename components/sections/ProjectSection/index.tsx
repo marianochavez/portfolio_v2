@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Box, Center, Heading, SimpleGrid } from "@chakra-ui/react";
+import { Box, Center, Grid, Heading, SimpleGrid } from "@chakra-ui/react";
 import { Element as ScrollSection } from "react-scroll";
 
 import { DataContext } from "../../../context/DataContext";
@@ -12,16 +12,21 @@ const ProjectSection = () => {
 
   return (
     <ScrollSection name="projects">
-      <Center p={10}>
+      <Center py={10}>
         <Heading fontSize="4xl">
           {language === "es" ? "Proyectos" : "Projects"}
         </Heading>
       </Center>
 
-      <SimpleGrid
-        columns={[1, 2, 2, 3]}
-        gap={6}
-        px={{ base: "3xl", md: "2xl", lg: "5xl" }}
+      <Grid
+        templateColumns={[
+          "repeat(1, 1fr)",
+          "repeat(2, 1fr)",
+          "repeat(2, 1fr)",
+          "repeat(3, 1fr)",
+        ]}
+        gap={"6"}
+        mx={"6"}
       >
         {portfolio.projects.map((project) => (
           <ProjectItem
@@ -30,7 +35,7 @@ const ProjectSection = () => {
             project={project}
           />
         ))}
-      </SimpleGrid>
+      </Grid>
       <ChevronNav toElement="contact" />
     </ScrollSection>
   );

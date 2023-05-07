@@ -8,6 +8,8 @@ import { DataContext } from "../../context/DataContext";
 import { useScrollClock } from "../../hooks/useScrollClock";
 import TextReveal from "../ui/TextReveal";
 
+import galaxy from "@/public/images/galaxy.webp";
+
 const MotionHStack = motion(HStack);
 const MotionBox = motion(Box);
 
@@ -16,7 +18,7 @@ const HeaderSection = () => {
 
   return (
     <ScrollSection name="intro">
-      <Box h="100vh">
+      <Box h="$100vh">
         <Flex alignItems="center" h="100%" justifyContent="center">
           <Stack transform={{ base: "scale(0.75)", md: "none" }}>
             <Box h="24rem" pos="relative" w="24rem">
@@ -78,11 +80,20 @@ const GradientImg = () => {
           rotate,
           scale: 1.45,
         }}
+        initial={{
+          opacity: 0,
+        }}
+        transition={{
+          duration: 0.8,
+        }}
+        whileInView={{
+          opacity: 1,
+        }}
         w="100%"
       >
         <Image
           alt="Mariano Chavez"
-          src="https://res.cloudinary.com/chavedo/image/upload/c_fill,h_540,w_540/v1661138977/portfolio/20353670.webp"
+          src={galaxy}
           height={512}
           width={512}
           priority

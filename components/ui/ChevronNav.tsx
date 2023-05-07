@@ -21,7 +21,7 @@ const ChevronNav = ({toElement, offset = -70, props}: ChevronNavProps) => {
       {...props}
     >
       <Link smooth offset={offset} to={toElement}>
-        <Icon as={BsChevronDoubleDown} fontSize="6xl" />
+        <Icon as={BsChevronDoubleDown} fontSize="6xl" cursor="pointer"/>
       </Link>
     </CenterMotion>
   );

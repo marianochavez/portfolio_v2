@@ -17,7 +17,6 @@ const ContactSection = dynamic(
   { ssr: false }
 );
 const Footer = dynamic(() => import("@/components/ui/Footer"), { ssr: false });
-// import Footer from "@/components/ui/Footer";
 
 export default function Home() {
   return (

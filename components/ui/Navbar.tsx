@@ -106,8 +106,8 @@ const DrawerMenu = ({ isOpen, sections, onClose }: DrawerMenuProps) => (
   <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
     <DrawerOverlay />
     <DrawerContent>
-      <DrawerCloseButton fontSize="2xl" mt={6} />
-      <DrawerHeader>
+      <DrawerCloseButton fontSize="2xl" mt={3} mr={2} />
+      <DrawerHeader as={Heading} fontSize="4xl" alignSelf={"baseline"} cursor={"pointer"}>
         <LinkScroll smooth to="intro" onClick={onClose}>
           MC
         </LinkScroll>

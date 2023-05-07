@@ -23,7 +23,6 @@ export const styles = {
     },
     "::-webkit-scrollbar-thumb": {
       bg: props.colorMode === "dark" ? "white" : "gray.500",
-      borderRadius: "full",
     },
     "::-webkit-scrollbar-thumb:hover": {
       bg: props.colorMode === "dark" ? "gray.500" : "gray.600",
