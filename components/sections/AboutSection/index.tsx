@@ -43,7 +43,7 @@ const AboutSection = () => {
           <Box flex={1} order={[2, 2, 1]} p={2}>
             <Text size="sm" whiteSpace="pre-wrap">
               {language === "es" ? "Hola " : "Hi "}
-              <span aria-labelledby="wave" className="wave" role="img">
+              <span aria-labelledby="wave" className={styles.wave} role="img">
                 👋🏻
               </span>
               ,{language === "es" ? ` soy` : ` I'm`} {portfolio.about.firstName}
